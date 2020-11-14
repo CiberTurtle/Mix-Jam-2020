@@ -10,20 +10,20 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1ee4c3dc70c04a847abac1d3f25fa67f, type: 3}
-  m_Name: Akward Silence
+  m_Name: Lazy weekend
   m_EditorClassIdentifier: 
-  sprite: {fileID: 21300000, guid: 670fc49aa9b37eb4cacef74c63ccda33, type: 3}
-  sDescription: Let's have a fresh start!
+  sprite: {fileID: 21300000, guid: aa966329d800a9d4ab5469b2e14aaae6, type: 3}
+  sDescription: Resets opinion at price of 5 interest
   actions:
   - iWeight: 1
     bApplyOpinion: 0
-    opIntrestOperator: 0
-    iIntrestFactor: 0
+    opIntrestOperator: 3
+    iIntrestFactor: 5
     opOpinionOperator: 1
     iOpinionFactor: 0
-  - iWeight: 2
+  - iWeight: 1
     bApplyOpinion: 0
     opIntrestOperator: 3
-    iIntrestFactor: 1
+    iIntrestFactor: 5
     opOpinionOperator: 1
     iOpinionFactor: 0
