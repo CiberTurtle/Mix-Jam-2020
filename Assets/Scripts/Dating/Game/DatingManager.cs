@@ -149,6 +149,8 @@ namespace Game.Dating
 
 			currentWeapon.iIntrest = Mathf.Clamp(currentWeapon.iIntrest, 0, currentWeapon.weapon.iIntrestToWin);
 
+			SayDialogue(Util.GetRandomItem(action.sPosibleDialogues));
+
 			hand.RemoveAt(index);
 			hand.Add(Util.GetRandomItem(cards));
 			RefreshHand();
@@ -158,6 +160,11 @@ namespace Game.Dating
 		{
 			currentWeapon.iIntrest += currentWeapon.iOpinion;
 			currentWeapon.iOpinion = 0;
+		}
+
+		public void SayDialogue(string sText)
+		{
+			Debug.Log("You say: " + sText);
 		}
 	}
 }

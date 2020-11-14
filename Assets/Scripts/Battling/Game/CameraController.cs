@@ -27,8 +27,6 @@ namespace Game.Battling
 
 		void LateUpdate()
 		{
-			if (!BattlingManager.current.player) return;
-
 			Vector2 v2PlayerPos = BattlingManager.current.player.transform.position;
 			Vector2 v2MousePos = BattlingManager.current.v2MousePos;
 

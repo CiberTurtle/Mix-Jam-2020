@@ -31,7 +31,7 @@ public class @InputMain : IInputActionCollection, IDisposable
                     ""type"": ""PassThrough"",
                     ""id"": ""1485a472-ff3e-4540-99fc-c816bddf43d2"",
                     ""expectedControlType"": ""Vector2"",
-                    ""processors"": ""NormalizeVector2"",
+                    ""processors"": """",
                     ""interactions"": """"
                 }
             ],

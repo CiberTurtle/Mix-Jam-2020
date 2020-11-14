@@ -38,6 +38,7 @@ namespace Game.Battling
 		public void GetMousePos()
 		{
 			v2MousePos = cam.ScreenToWorldPoint(m_v2MousePos);
+			Debug.Log("Geted" + v2MousePos);
 
 			player.Aim(v2MousePos);
 		}

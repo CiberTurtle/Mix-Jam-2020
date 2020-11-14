@@ -21,25 +21,27 @@ namespace Game.Dating
 			public Operator opOpinionOperator;
 			public int iOpinionFactor;
 			public OperatorMode opmOpinionOperatorMode;
+			[Space]
+			public string[] sPosibleDialogues;
 		}
 
 		[NaughtyAttributes.ShowAssetPreview] public Sprite sprite;
 		[TextArea] public string sDescription;
 		[Space]
-		[NaughtyAttributes.ReorderableList] public List<Action> actions = new List<Action>();
+		[NaughtyAttributes.ReorderableList] public Action[] actions;
 
 		public Action Use()
 		{
-			Action action = actions[actions.Count - 1];
+			Action action = actions[actions.Length - 1];
 
 			int iWeightSum = 0;
-			for (int i = 0; i < actions.Count; ++i)
+			for (int i = 0; i < actions.Length; ++i)
 			{
 				iWeightSum += actions[i].iWeight;
 			}
 
 			int index = 0;
-			while (index < actions.Count - 1)
+			while (index < actions.Length - 1)
 			{
 				if (Random.Range(0, iWeightSum) < actions[index].iWeight)
 				{

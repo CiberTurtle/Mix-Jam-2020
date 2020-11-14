@@ -1040,8 +1040,9 @@ MonoBehaviour:
   weapon: {fileID: 11400000, guid: f13c88583e53a7d4b9902ea2a899c1d2, type: 2}
   iMaxCards: 4
   cards:
-  - {fileID: 11400000, guid: 20b9cbe7403e9504c90e5f403da28f7a, type: 2}
+  - {fileID: 11400000, guid: 9c5fccc151316ca4ea42e2f13fe425c2, type: 2}
   - {fileID: 11400000, guid: e8a42c990493a8c44bda54d71f1fa2fb, type: 2}
+  - {fileID: 11400000, guid: 20b9cbe7403e9504c90e5f403da28f7a, type: 2}
   - {fileID: 11400000, guid: 4c4cd8bdc85c3c5438bcaa8c3c53b994, type: 2}
   textOpinion: {fileID: 227658241}
   barIntrest: {fileID: 1439709682}

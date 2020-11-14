@@ -335,9 +335,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ddd6a6212ed73e3448674860dbafcd40, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fMidPoint: 0.5
-  fSmoothing: 0.1
-  fMaxDist: 5
+  fMidPoint: 0.25
+  fSmoothing: 0.25
+  fMaxDist: 1
 --- !u!1001 &4777138812059224347
 PrefabInstance:
   m_ObjectHideFlags: 0
