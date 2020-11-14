@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ee4c3dc70c04a847abac1d3f25fa67f, type: 3}
+  m_Name: Cheesy Pickup Line
+  m_EditorClassIdentifier: 
+  sprite: {fileID: 21300000, guid: 670fc49aa9b37eb4cacef74c63ccda33, type: 3}
+  sDescription: A low risk, not realy effective option.
+  actions:
+  - iWeight: 1
+    bApplyOpinion: 1
+    opIntrestOperator: 0
+    iIntrestFactor: 0
+    opOpinionOperator: 4
+    iOpinionFactor: 2
+  - iWeight: 4
+    bApplyOpinion: 0
+    opIntrestOperator: 0
+    iIntrestFactor: 0
+    opOpinionOperator: 3
+    iOpinionFactor: -2
