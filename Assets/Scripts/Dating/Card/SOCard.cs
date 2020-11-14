@@ -15,10 +15,12 @@ namespace Game.Dating
 			public bool bApplyOpinion;
 			[Space]
 			public Operator opIntrestOperator;
+			public OperatorMode opmIntrestOperatorMode;
 			public int iIntrestFactor;
 			[Space]
 			public Operator opOpinionOperator;
 			public int iOpinionFactor;
+			public OperatorMode opmOpinionOperatorMode;
 		}
 
 		[NaughtyAttributes.ShowAssetPreview] public Sprite sprite;

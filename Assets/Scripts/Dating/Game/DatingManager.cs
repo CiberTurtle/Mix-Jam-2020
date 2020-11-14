@@ -83,41 +83,65 @@ namespace Game.Dating
 		{
 			SOCard.Action action = hand[index].Use();
 
+			int iIntrestFactor = action.iIntrestFactor;
+
+			switch (action.opmIntrestOperatorMode)
+			{
+				case OperatorMode.Abs:
+					iIntrestFactor = Mathf.Abs(iIntrestFactor);
+					break;
+				case OperatorMode.Neg_Abs:
+					iIntrestFactor = -Mathf.Abs(iIntrestFactor);
+					break;
+			}
+
 			switch (action.opIntrestOperator)
 			{
 				case Operator.Set:
-					currentWeapon.iIntrest = action.iIntrestFactor;
+					currentWeapon.iIntrest = iIntrestFactor;
 					break;
 				case Operator.Add:
-					currentWeapon.iIntrest += action.iIntrestFactor;
+					currentWeapon.iIntrest += iIntrestFactor;
 					break;
 				case Operator.Subtract:
-					currentWeapon.iIntrest -= action.iIntrestFactor;
+					currentWeapon.iIntrest -= iIntrestFactor;
 					break;
 				case Operator.Multiply:
-					currentWeapon.iIntrest *= action.iIntrestFactor;
+					currentWeapon.iIntrest *= iIntrestFactor;
 					break;
 				case Operator.Divide:
-					if (action.iIntrestFactor > 0) currentWeapon.iIntrest = Mathf.RoundToInt(currentWeapon.iIntrest / action.iIntrestFactor);
+					if (iIntrestFactor > 0) currentWeapon.iIntrest = Mathf.RoundToInt(currentWeapon.iIntrest / iIntrestFactor);
+					break;
+			}
+
+			int iOpinionFactor = action.iOpinionFactor;
+
+			switch (action.opmIntrestOperatorMode)
+			{
+				case OperatorMode.Abs:
+					iOpinionFactor = Mathf.Abs(iOpinionFactor);
+					break;
+				case OperatorMode.Neg_Abs:
+					iOpinionFactor = -Mathf.Abs(iOpinionFactor);
 					break;
 			}
 
 			switch (action.opOpinionOperator)
 			{
 				case Operator.Set:
-					currentWeapon.iOpinion = action.iOpinionFactor;
+					currentWeapon.iOpinion = iOpinionFactor;
 					break;
 				case Operator.Add:
-					currentWeapon.iOpinion += action.iOpinionFactor;
+					currentWeapon.iOpinion += iOpinionFactor;
 					break;
 				case Operator.Subtract:
-					currentWeapon.iOpinion -= action.iOpinionFactor;
+					currentWeapon.iOpinion -= iOpinionFactor;
 					break;
 				case Operator.Multiply:
-					currentWeapon.iOpinion *= action.iOpinionFactor;
+					currentWeapon.iOpinion *= iOpinionFactor;
 					break;
 				case Operator.Divide:
-					if (action.iOpinionFactor > 0) currentWeapon.iOpinion = Mathf.RoundToInt(currentWeapon.iOpinion / action.iIntrestFactor);
+					if (iOpinionFactor > 0) currentWeapon.iOpinion = Mathf.RoundToInt(currentWeapon.iOpinion / iOpinionFactor);
 					break;
 			}
 
