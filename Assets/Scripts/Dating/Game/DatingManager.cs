@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using Ciber_Turtle.UI;
+using DG.Tweening;
 
 namespace Game.Dating
 {
@@ -25,15 +26,24 @@ namespace Game.Dating
 		[SerializeField] Image imgWeapon;
 		[SerializeField] Transform tHandHolder;
 		[Space]
+		[SerializeField] float fDioTime;
+		[SerializeField] TMP_Text textPlayerDio;
+		[SerializeField] TMP_Text textWeaponDio;
+		[Space]
 		[SerializeField] GameObject pfCard;
 
 		// Data
 		List<SOCard> hand;
 		WeaponBehaviour currentWeapon;
+		Color cOgDioColor;
 
 		void Awake()
 		{
 			m_current = this;
+
+			cOgDioColor = textPlayerDio.color;
+			textPlayerDio.color = Color.clear;
+			textWeaponDio.color = Color.clear;
 
 			currentWeapon = new WeaponBehaviour(weapon);
 
@@ -149,7 +159,7 @@ namespace Game.Dating
 
 			currentWeapon.iIntrest = Mathf.Clamp(currentWeapon.iIntrest, 0, currentWeapon.weapon.iIntrestToWin);
 
-			SayDialogue(Util.GetRandomItem(action.sPosibleDialogues));
+			SayDialogue(Util.GetRandomItem(action.sPosibleDialogues), "...");
 
 			hand.RemoveAt(index);
 			hand.Add(Util.GetRandomItem(cards));
@@ -162,9 +172,15 @@ namespace Game.Dating
 			currentWeapon.iOpinion = 0;
 		}
 
-		public void SayDialogue(string sText)
+		public void SayDialogue(string sPlayerText, string sWeaponText)
 		{
-			Debug.Log("You say: " + sText);
+			textPlayerDio.text = sPlayerText;
+			textWeaponDio.text = sWeaponText;
+
+			textPlayerDio.DOColor(cOgDioColor, 0.1f).OnComplete(() => textPlayerDio.DOColor(Color.clear, 0.1f).SetDelay(fDioTime).OnComplete
+				(() =>
+					textPlayerDio.DOColor(cOgDioColor, 0.1f).OnComplete(() => textPlayerDio.DOColor(Color.clear, 0.1f).SetDelay(fDioTime))
+				));
 		}
 	}
 }

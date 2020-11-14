@@ -23,6 +23,7 @@ namespace Game.Dating
 			public OperatorMode opmOpinionOperatorMode;
 			[Space]
 			public string[] sPosibleDialogues;
+			public string[] sPosibleResponses;
 		}
 
 		[NaughtyAttributes.ShowAssetPreview] public Sprite sprite;
