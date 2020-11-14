@@ -13,24 +13,42 @@ MonoBehaviour:
   m_Name: Weird Flex
   m_EditorClassIdentifier: 
   sprite: {fileID: 21300000, guid: f75048755a00d3646a725f0f16e29418, type: 3}
-  sDescription: 33% set opinion to 5, 33% sets opinion to 10, and 33% takes away
-    10 interest
+  sDescription: Maybe they'll be impressed, maybe they LOVE me for it, or maybe they'll
+    see you as an asshole for showing your guns.
   actions:
   - iWeight: 1
     bApplyOpinion: 0
     opIntrestOperator: 2
+    opmIntrestOperatorMode: 0
     iIntrestFactor: 0
     opOpinionOperator: 1
     iOpinionFactor: 5
+    opmOpinionOperatorMode: 0
+    sPosibleDialogues:
+    - '*Flex flex*'
+    - You know I go to the gym every day
+    - I have a have
   - iWeight: 1
     bApplyOpinion: 0
     opIntrestOperator: 3
+    opmIntrestOperatorMode: 0
     iIntrestFactor: 0
     opOpinionOperator: 1
     iOpinionFactor: 10
+    opmOpinionOperatorMode: 0
+    sPosibleDialogues:
+    - '*Flex flex flex*'
+    - I can rip flex tape in half.
   - iWeight: 1
     bApplyOpinion: 0
     opIntrestOperator: 3
+    opmIntrestOperatorMode: 0
     iIntrestFactor: 10
     opOpinionOperator: 0
     iOpinionFactor: 0
+    opmOpinionOperatorMode: 0
+    sPosibleDialogues:
+    - You know, I commented first on a PewDiePie video
+    - I've almost got a full set of netherite in minecraft
+    - I won a fortnite game 4 weeks ago!
+    - I solved world hunger by eating all my food

@@ -10,27 +10,35 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1ee4c3dc70c04a847abac1d3f25fa67f, type: 3}
-  m_Name: Cheesy Pickup Line
+  m_Name: Compliment
   m_EditorClassIdentifier: 
-  sprite: {fileID: 21300000, guid: 581eca56aeb679a43addd7a8a7fa611f, type: 3}
-  sDescription: Hopefully they are interested in it and not extremely opininated
-    about pickup lines
+  sprite: {fileID: 21300000, guid: bb66ff39c318f0e45aaa47e957f27e10, type: 3}
+  sDescription: Some love compliments, some of them hate them though.
   actions:
   - iWeight: 1
-    bApplyOpinion: 1
-    opIntrestOperator: 0
+    bApplyOpinion: 0
+    opIntrestOperator: 2
     opmIntrestOperatorMode: 0
     iIntrestFactor: 0
     opOpinionOperator: 2
-    iOpinionFactor: 5
+    iOpinionFactor: 10
     opmOpinionOperatorMode: 0
     sPosibleDialogues: []
   - iWeight: 1
     bApplyOpinion: 0
-    opIntrestOperator: 0
+    opIntrestOperator: 3
     opmIntrestOperatorMode: 0
-    iIntrestFactor: 0
-    opOpinionOperator: 3
+    iIntrestFactor: 5
+    opOpinionOperator: 2
+    iOpinionFactor: 10
+    opmOpinionOperatorMode: 0
+    sPosibleDialogues: []
+  - iWeight: 1
+    bApplyOpinion: 0
+    opIntrestOperator: 3
+    opmIntrestOperatorMode: 0
+    iIntrestFactor: 10
+    opOpinionOperator: 2
     iOpinionFactor: 10
     opmOpinionOperatorMode: 0
     sPosibleDialogues: []

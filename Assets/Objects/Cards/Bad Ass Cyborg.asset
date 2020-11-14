@@ -13,17 +13,23 @@ MonoBehaviour:
   m_Name: Bad Ass Cyborg
   m_EditorClassIdentifier: 
   sprite: {fileID: 21300000, guid: 3ed783e76272b654ea7f891f648e5f69, type: 3}
-  sDescription: 50/50 +15 opinion or -10 opinion
+  sDescription: She will either see you as a badass, or a mess
   actions:
   - iWeight: 1
     bApplyOpinion: 0
     opIntrestOperator: 2
+    opmIntrestOperatorMode: 0
     iIntrestFactor: 0
     opOpinionOperator: 2
     iOpinionFactor: 15
+    opmOpinionOperatorMode: 0
+    sPosibleDialogues: []
   - iWeight: 1
     bApplyOpinion: 0
     opIntrestOperator: 3
+    opmIntrestOperatorMode: 0
     iIntrestFactor: 0
     opOpinionOperator: 3
     iOpinionFactor: 10
+    opmOpinionOperatorMode: 0
+    sPosibleDialogues: []

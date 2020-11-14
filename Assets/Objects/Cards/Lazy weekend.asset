@@ -13,17 +13,18 @@ MonoBehaviour:
   m_Name: Lazy weekend
   m_EditorClassIdentifier: 
   sprite: {fileID: 21300000, guid: aa966329d800a9d4ab5469b2e14aaae6, type: 3}
-  sDescription: Resets opinion at price of 5 interest
+  sDescription: Take yourself out of their mind with a lazy weekend. Hopefully they
+    dont think of you as THAT lazy.
   actions:
   - iWeight: 1
     bApplyOpinion: 0
     opIntrestOperator: 3
+    opmIntrestOperatorMode: 0
     iIntrestFactor: 5
     opOpinionOperator: 1
     iOpinionFactor: 0
-  - iWeight: 1
-    bApplyOpinion: 0
-    opIntrestOperator: 3
-    iIntrestFactor: 5
-    opOpinionOperator: 1
-    iOpinionFactor: 0
+    opmOpinionOperatorMode: 0
+    sPosibleDialogues:
+    - You watch netflix al day
+    - You beinge JoJo's bizzare adventure
+    - You sleep 3 days straight

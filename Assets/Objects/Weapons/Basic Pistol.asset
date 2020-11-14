@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Basic Pistol
   m_EditorClassIdentifier: 
   sprite: {fileID: 21300000, guid: 670fc49aa9b37eb4cacef74c63ccda33, type: 3}
-  iIntrestToWin: 25
+  iIntrestToWin: 50
   mmStartingIntrest:
-    m_min: 3
-    m_max: 4
+    m_min: 10
+    m_max: 10
