@@ -21,18 +21,18 @@ namespace Game.Dating
 		{
 			rect = GetComponent<RectTransform>();
 
-			fStartingY = rect.position.y;
+			fStartingY = rect.localPosition.y;
 		}
 
 		public void OnPointerEnter(PointerEventData eventData)
 		{
-			rect.DOMoveY(fStartingY + fMoveUpAmount, 0.25f);
+			rect.DOLocalMoveY(fStartingY + fMoveUpAmount, 0.25f);
 			rect.DOScale(fScaleAmount, 0.25f);
 		}
 
 		public void OnPointerExit(PointerEventData eventData)
 		{
-			rect.DOMoveY(fStartingY, 0.25f);
+			rect.DOLocalMoveY(fStartingY, 0.25f);
 			rect.DOScale(1, 0.25f);
 		}
 

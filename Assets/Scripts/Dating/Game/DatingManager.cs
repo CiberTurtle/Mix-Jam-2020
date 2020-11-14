@@ -15,7 +15,9 @@ namespace Game.Dating
 
 		// Perams
 		public SOWeapon weapon;
-		public List<SOCard> hand;
+		[Space]
+		[SerializeField] int iMaxCards;
+		[NaughtyAttributes.ReorderableList] public SOCard[] cards;
 		[Header("UI")]
 		[SerializeField] TMP_Text textOpinion;
 		[SerializeField] UIProgressBar barIntrest;
@@ -26,6 +28,7 @@ namespace Game.Dating
 		[SerializeField] GameObject pfCard;
 
 		// Data
+		List<SOCard> hand;
 		WeaponBehaviour currentWeapon;
 
 		void Awake()
@@ -33,6 +36,12 @@ namespace Game.Dating
 			m_current = this;
 
 			currentWeapon = new WeaponBehaviour(weapon);
+
+			hand = new List<SOCard>();
+			for (int i = 0; i < iMaxCards; i++)
+			{
+				hand.Add(Util.GetRandomItem(cards));
+			}
 
 			RefreshWeapon();
 			RefreshHand();
@@ -45,6 +54,7 @@ namespace Game.Dating
 
 			barIntrest.maxValue = currentWeapon.weapon.iIntrestToWin;
 			barIntrest.value = currentWeapon.iIntrest;
+
 		}
 
 		public void RefreshWeapon()
@@ -54,6 +64,11 @@ namespace Game.Dating
 
 		public void RefreshHand()
 		{
+			foreach (Transform child in tHandHolder)
+			{
+				Destroy(child.gameObject);
+			}
+
 			foreach (SOCard card in hand)
 			{
 				Transform spawnedCard = Instantiate(pfCard, tHandHolder).transform;
@@ -109,6 +124,10 @@ namespace Game.Dating
 			if (action.bApplyOpinion) ApplyOpinion();
 
 			currentWeapon.iIntrest = Mathf.Clamp(currentWeapon.iIntrest, 0, currentWeapon.weapon.iIntrestToWin);
+
+			hand.RemoveAt(index);
+			hand.Add(Util.GetRandomItem(cards));
+			RefreshHand();
 		}
 
 		public void ApplyOpinion()
