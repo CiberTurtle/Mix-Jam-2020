@@ -17,6 +17,12 @@ MonoBehaviour:
   actions:
   - iWeight: 1
     bApplyOpinion: 0
+    opIntrestOperator: 0
+    iIntrestFactor: 0
+    opOpinionOperator: 1
+    iOpinionFactor: 0
+  - iWeight: 2
+    bApplyOpinion: 0
     opIntrestOperator: 3
     iIntrestFactor: 1
     opOpinionOperator: 1

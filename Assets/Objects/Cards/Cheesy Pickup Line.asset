@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Cheesy Pickup Line
   m_EditorClassIdentifier: 
   sprite: {fileID: 21300000, guid: 670fc49aa9b37eb4cacef74c63ccda33, type: 3}
-  sDescription: A low risk, not realy effective option.
+  sDescription: A low risk, not really effective option.
   actions:
   - iWeight: 1
     bApplyOpinion: 1
@@ -21,7 +21,7 @@ MonoBehaviour:
     iIntrestFactor: 0
     opOpinionOperator: 4
     iOpinionFactor: 2
-  - iWeight: 4
+  - iWeight: 6
     bApplyOpinion: 0
     opIntrestOperator: 0
     iIntrestFactor: 0

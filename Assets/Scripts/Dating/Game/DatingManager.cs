@@ -9,19 +9,24 @@ namespace Game.Dating
 {
 	public class DatingManager : MonoBehaviour
 	{
+		// Singleton
 		static DatingManager m_current;
 		public static DatingManager current { get => m_current; }
 
+		// Perams
 		public SOWeapon weapon;
 		public List<SOCard> hand;
 		[Header("UI")]
+		[SerializeField] TMP_Text textOpinion;
+		[SerializeField] UIProgressBar barIntrest;
+		[Space]
 		[SerializeField] Image imgWeapon;
 		[SerializeField] Transform tHandHolder;
+		[Space]
 		[SerializeField] GameObject pfCard;
-		[SerializeField] UIProgressBar barIntrest;
 
-		public WeaponBehaviour currentWeapon;
-
+		// Data
+		WeaponBehaviour currentWeapon;
 
 		void Awake()
 		{
@@ -35,6 +40,9 @@ namespace Game.Dating
 
 		void Update()
 		{
+			if (currentWeapon.iOpinion > 0) textOpinion.text = "+" + currentWeapon.iOpinion.ToString();
+			else textOpinion.text = currentWeapon.iOpinion.ToString();
+
 			barIntrest.maxValue = currentWeapon.weapon.iIntrestToWin;
 			barIntrest.value = currentWeapon.iIntrest;
 		}

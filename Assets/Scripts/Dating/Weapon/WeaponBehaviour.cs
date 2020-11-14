@@ -13,6 +13,8 @@ namespace Game.Dating
 		public WeaponBehaviour(SOWeapon weapon)
 		{
 			this.weapon = weapon;
+
+			iIntrest = Mathf.RoundToInt(weapon.mmStartingIntrest.randomValue);
 		}
 	}
 }
