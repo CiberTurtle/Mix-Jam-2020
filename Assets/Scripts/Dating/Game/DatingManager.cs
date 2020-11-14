@@ -9,6 +9,9 @@ namespace Game.Dating
 {
 	public class DatingManager : MonoBehaviour
 	{
+		static DatingManager m_current;
+		public static DatingManager current { get => m_current; }
+
 		public SOWeapon weapon;
 		public List<SOCard> hand;
 		[Header("UI")]
@@ -19,8 +22,11 @@ namespace Game.Dating
 
 		public WeaponBehaviour currentWeapon;
 
+
 		void Awake()
 		{
+			m_current = this;
+
 			currentWeapon = new WeaponBehaviour(weapon);
 
 			RefreshWeapon();
@@ -43,8 +49,6 @@ namespace Game.Dating
 			foreach (SOCard card in hand)
 			{
 				Transform spawnedCard = Instantiate(pfCard, tHandHolder).transform;
-
-				spawnedCard.GetComponent<Button>().onClick.AddListener(() => UseCard(spawnedCard.GetSiblingIndex()));
 
 				spawnedCard.GetChild(1).GetChild(0).GetComponent<Image>().sprite = card.sprite;
 				spawnedCard.GetChild(2).GetComponent<TMP_Text>().text = card.name;
@@ -101,7 +105,8 @@ namespace Game.Dating
 
 		public void ApplyOpinion()
 		{
-
+			currentWeapon.iIntrest += currentWeapon.iOpinion;
+			currentWeapon.iOpinion = 0;
 		}
 	}
 }

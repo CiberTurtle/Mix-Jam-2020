@@ -10,7 +10,7 @@ namespace Game.Dating
 		[System.Serializable]
 		public struct Action
 		{
-			public int iWeight;
+			[Min(1)] public int iWeight;
 
 			public bool bApplyOpinion;
 			[Space]
