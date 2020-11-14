@@ -159,7 +159,7 @@ namespace Game.Dating
 
 			currentWeapon.iIntrest = Mathf.Clamp(currentWeapon.iIntrest, 0, currentWeapon.weapon.iIntrestToWin);
 
-			SayDialogue(Util.GetRandomItem(action.sPosibleDialogues), "...");
+			SayDialogue(Util.GetRandomItem(action.sPosibleDialogues), Util.GetRandomItem(action.sPosibleResponses));
 
 			hand.RemoveAt(index);
 			hand.Add(Util.GetRandomItem(cards));
