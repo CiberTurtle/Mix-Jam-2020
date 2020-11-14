@@ -9,3 +9,10 @@ public enum Operator
 	Multiply,
 	Divide
 }
+
+public enum OperatorMode
+{
+	None,
+	Abs,
+	Neg_Abs
+}
