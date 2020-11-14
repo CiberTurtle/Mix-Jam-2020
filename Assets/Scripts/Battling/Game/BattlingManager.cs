@@ -20,9 +20,14 @@ namespace Game.Battling
 		InputMain controls;
 		Vector2 m_v2MousePos;
 
+		// Cache
+		Camera cam;
+
 		void Awake()
 		{
 			m_current = this;
+
+			cam = Camera.main;
 
 			player = Instantiate(pfPlayer).GetComponent<Player>();
 
@@ -32,7 +37,19 @@ namespace Game.Battling
 
 		public void GetMousePos()
 		{
+			v2MousePos = cam.ScreenToWorldPoint(m_v2MousePos);
 
+			player.Aim(v2MousePos);
+		}
+
+		void OnEnable()
+		{
+			controls.Enable();
+		}
+
+		void OnDisable()
+		{
+			controls.Disable();
 		}
 	}
 }
